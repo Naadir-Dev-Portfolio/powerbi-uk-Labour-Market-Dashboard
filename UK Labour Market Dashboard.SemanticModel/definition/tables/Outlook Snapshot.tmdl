@@ -1,0 +1,194 @@
+table 'Outlook Snapshot'
+	lineageTag: bf69eb02-6c40-49e9-93cf-6857cb21bac5
+
+	measure 'Outlook Direction' = SELECTEDVALUE('Outlook Snapshot'[Direction])
+		displayFolder: Summary
+		lineageTag: 304d11f1-eea6-4c77-89b5-898bf29b935b
+
+	measure 'Outlook Headline' = SELECTEDVALUE('Outlook Snapshot'[Headline])
+		displayFolder: Summary
+		lineageTag: 02f97efa-08e3-42a9-89ed-92ad1d9318d1
+
+	measure 'Outlook Detail' = SELECTEDVALUE('Outlook Snapshot'[Detail])
+		displayFolder: Summary
+		lineageTag: eed79f74-ccb9-4c5a-9dff-6df04593645d
+
+	measure 'Latest Common Signal Date' = MAX('Outlook Snapshot'[SnapshotDate])
+		formatString: mmmm yyyy
+		displayFolder: Summary
+		lineageTag: c62f2f6a-c00b-456f-8d15-81818b1de62b
+
+	measure 'Latest Claimant Count (K)' = MAX('Outlook Snapshot'[NationalClaimantCountK])
+		formatString: #,##0.0
+		displayFolder: Summary
+		lineageTag: 3a55f9fb-b0f7-45aa-a5f0-9514331e411f
+
+	measure 'Latest Claimant Rate %' = MAX('Outlook Snapshot'[NationalClaimantRatePct]) / 100
+		formatString: 0.0%
+		displayFolder: Summary
+		lineageTag: e74f9edd-abc2-4181-b0e0-403f96b58a5f
+
+	measure 'Latest Vacancies (K)' = MAX('Outlook Snapshot'[VacanciesK])
+		formatString: #,##0.0
+		displayFolder: Summary
+		lineageTag: 4080e7de-eaac-4ef0-9e68-f1bd5902a309
+
+	measure 'Latest Vacancy Rate' = MAX('Outlook Snapshot'[VacancyRatePer100Jobs])
+		formatString: 0.0
+		displayFolder: Summary
+		lineageTag: 30f179f7-db66-4c8a-b7ed-65290cb0ec64
+
+	measure 'Latest Real Pay YoY %' = MAX('Outlook Snapshot'[RealRegularPayYoYSinglePct]) / 100
+		formatString: 0.0%
+		displayFolder: Summary
+		lineageTag: 72175a0b-1971-410d-a469-96061c2a9cce
+
+	measure 'Claimant 3M Delta (K)' = MAX('Outlook Snapshot'[Claimant3MDeltaK])
+		formatString: #,##0.0
+		displayFolder: Summary
+		lineageTag: d4b591ca-56ff-42c3-8185-bd40396a5826
+
+	measure 'Vacancies 3M Delta (K)' = MAX('Outlook Snapshot'[Vacancies3MDeltaK])
+		formatString: #,##0.0
+		displayFolder: Summary
+		lineageTag: 5a1499c4-7acf-4a46-8851-6a3889b5c245
+
+	measure 'Signal Score' = MAX('Outlook Snapshot'[SignalScore])
+		formatString: 0.0
+		displayFolder: Summary
+		lineageTag: d7168b09-e832-4d50-a0b0-01c560f7ff93
+
+	measure 'Latest Vacancies Per Claimant' = MAX('Outlook Snapshot'[VacanciesPerClaimant])
+		formatString: 0.00
+		displayFolder: Summary
+		lineageTag: 877fa8ee-ad8e-48fb-9980-eb738ea66b51
+
+	measure 'Claimant 12M Delta (K)' = MAX('Outlook Snapshot'[Claimant12MDeltaK])
+		formatString: +#,##0.0;-#,##0.0;0
+		displayFolder: Summary
+		lineageTag: 3fd2aad8-de15-4598-b60a-93f2c96857fd
+
+	measure 'Vacancies 12M Delta (K)' = MAX('Outlook Snapshot'[Vacancies12MDeltaK])
+		formatString: +#,##0.0;-#,##0.0;0
+		displayFolder: Summary
+		lineageTag: 27658a64-ff0d-44dd-8400-344f2d27981d
+
+	column SnapshotDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1b9ff967-ab57-4b98-a5bd-3ff04af36e30
+		summarizeBy: none
+		sourceColumn: SnapshotDate
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Direction
+		dataType: string
+		lineageTag: 61cc4dcc-a5de-4f9b-8df2-3fff3234ff2c
+		summarizeBy: none
+		sourceColumn: Direction
+
+	column Headline
+		dataType: string
+		lineageTag: 7fe308f5-dc1a-404d-acf9-aa0f31ac6db2
+		summarizeBy: none
+		sourceColumn: Headline
+
+	column Detail
+		dataType: string
+		lineageTag: f4a09bde-535c-4bcb-84db-cc132ecbf528
+		summarizeBy: none
+		sourceColumn: Detail
+
+	column NationalClaimantCountK
+		dataType: double
+		lineageTag: 25bd4a62-b884-41d0-ab0b-02563c9ca25a
+		summarizeBy: none
+		sourceColumn: NationalClaimantCountK
+
+	column NationalClaimantRatePct
+		dataType: double
+		lineageTag: d6322211-694e-481c-aa6a-151b343f9856
+		summarizeBy: none
+		sourceColumn: NationalClaimantRatePct
+
+	column VacanciesK
+		dataType: double
+		lineageTag: 28f9f140-d251-480f-92e7-8304ed65da33
+		summarizeBy: none
+		sourceColumn: VacanciesK
+
+	column VacancyRatePer100Jobs
+		dataType: double
+		lineageTag: 91447782-3c8a-4f2f-89ea-3ef145b333c5
+		summarizeBy: none
+		sourceColumn: VacancyRatePer100Jobs
+
+	column RealRegularPayYoYSinglePct
+		dataType: double
+		lineageTag: a6ffdf98-cf3f-4cae-8876-630d3334848d
+		summarizeBy: none
+		sourceColumn: RealRegularPayYoYSinglePct
+
+	column VacanciesPerClaimant
+		dataType: double
+		lineageTag: 55035346-e335-4f8c-aeda-926934315409
+		summarizeBy: none
+		sourceColumn: VacanciesPerClaimant
+
+	column Claimant3MDeltaK
+		dataType: double
+		lineageTag: b85d2444-370b-4b98-9b4b-99041bf04a5e
+		summarizeBy: none
+		sourceColumn: Claimant3MDeltaK
+
+	column Vacancies3MDeltaK
+		dataType: double
+		lineageTag: 0ad35566-d94f-4cf5-8194-6526880f3fb6
+		summarizeBy: none
+		sourceColumn: Vacancies3MDeltaK
+
+	column Claimant12MDeltaK
+		dataType: double
+		lineageTag: b148ff1d-b770-4674-95e4-4120e0bb0751
+		summarizeBy: none
+		sourceColumn: Claimant12MDeltaK
+
+	column Vacancies12MDeltaK
+		dataType: double
+		lineageTag: 25b534dd-984f-4826-b76f-6ab066d3a42b
+		summarizeBy: none
+		sourceColumn: Vacancies12MDeltaK
+
+	column SignalScore
+		dataType: double
+		lineageTag: 9e82381d-aca0-4407-ad9a-6c7710bf1ebb
+		summarizeBy: none
+		sourceColumn: SignalScore
+
+	partition 'Outlook Snapshot-Partition' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(SourceDataFolder & "outlook_snapshot.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"SnapshotDate", type date},
+				        {"Direction", type text},
+				        {"Headline", type text},
+				        {"Detail", type text},
+				        {"NationalClaimantCountK", type number},
+				        {"NationalClaimantRatePct", type number},
+				        {"VacanciesK", type number},
+				        {"VacancyRatePer100Jobs", type number},
+				        {"RealRegularPayYoYSinglePct", type number},
+				        {"VacanciesPerClaimant", type number},
+				        {"Claimant3MDeltaK", type number},
+				        {"Vacancies3MDeltaK", type number},
+				        {"Claimant12MDeltaK", type number},
+				        {"Vacancies12MDeltaK", type number},
+				        {"SignalScore", type number}
+				    })
+				in
+				    #"Changed Type"
+

@@ -1,0 +1,227 @@
+table 'Fact Local Pay'
+	lineageTag: 33f02236-2956-417a-a379-3d42284f519a
+
+	measure 'Median Weekly Pay GBP' = AVERAGE('Fact Local Pay'[MedianWeeklyPayGBP])
+		formatString: £#,##0.0
+		displayFolder: Pay Metrics
+		lineageTag: 837f8cf3-07f7-4ec8-b49a-daa954685a40
+
+	measure 'Mean Weekly Pay GBP' = AVERAGE('Fact Local Pay'[MeanWeeklyPayGBP])
+		formatString: £#,##0.0
+		displayFolder: Pay Metrics
+		lineageTag: 13e6c56e-5b55-4352-b528-cb39334d790b
+
+	measure 'Median Pay YoY %' = AVERAGE('Fact Local Pay'[MedianYoYGrowthPct]) / 100
+		formatString: 0.0%
+		displayFolder: Pay Metrics
+		lineageTag: 0fb7ab71-de5c-413a-8fe4-01183c60fde4
+
+	measure 'Pay Gender Gap GBP' =
+			CALCULATE(AVERAGE('Fact Local Pay'[MedianWeeklyPayGBP]), 'Fact Local Pay'[SexGroup] = "Male")
+			-
+			CALCULATE(AVERAGE('Fact Local Pay'[MedianWeeklyPayGBP]), 'Fact Local Pay'[SexGroup] = "Female")
+		formatString: £#,##0.0
+		displayFolder: Pay Metrics
+		lineageTag: 771a3a4a-c342-4021-a9cf-515ba4d92595
+
+	measure 'Median Weekly Pay (All) GBP' = CALCULATE(AVERAGE('Fact Local Pay'[MedianWeeklyPayGBP]), 'Fact Local Pay'[SexGroup] = "All")
+		formatString: £#,##0.0
+		displayFolder: Pay Metrics
+		lineageTag: 6c76b90d-9c14-41b6-96f0-bd72f6e59cbf
+
+	measure 'Mean Weekly Pay (All) GBP' = CALCULATE(AVERAGE('Fact Local Pay'[MeanWeeklyPayGBP]), 'Fact Local Pay'[SexGroup] = "All")
+		formatString: £#,##0.0
+		displayFolder: Pay Metrics
+		lineageTag: 2104629c-45fb-43c3-bc6c-f32f6f583f94
+
+	measure 'Female Median Pay GBP' = CALCULATE(AVERAGE('Fact Local Pay'[MedianWeeklyPayGBP]), 'Fact Local Pay'[SexGroup] = "Female")
+		formatString: £#,##0.0
+		displayFolder: Pay Metrics
+		lineageTag: 885877c3-113e-4964-9f5d-96c3a0b4bb5c
+
+	measure 'Male Median Pay GBP' = CALCULATE(AVERAGE('Fact Local Pay'[MedianWeeklyPayGBP]), 'Fact Local Pay'[SexGroup] = "Male")
+		formatString: £#,##0.0
+		displayFolder: Pay Metrics
+		lineageTag: 74db9917-be97-4ea8-8788-71411ca888c6
+
+	measure 'P10 Weekly Pay GBP' = CALCULATE(AVERAGE('Fact Local Pay'[P10]), 'Fact Local Pay'[SexGroup] = "All")
+		formatString: £#,##0.0
+		displayFolder: Pay Distribution
+		lineageTag: eb668022-94cd-49b5-9f92-399a9cf5f047
+
+	measure 'P25 Weekly Pay GBP' = CALCULATE(AVERAGE('Fact Local Pay'[P25]), 'Fact Local Pay'[SexGroup] = "All")
+		formatString: £#,##0.0
+		displayFolder: Pay Distribution
+		lineageTag: bcd0dccd-361d-45fe-9504-7e8ea3f3952b
+
+	measure 'P75 Weekly Pay GBP' = CALCULATE(AVERAGE('Fact Local Pay'[P75]), 'Fact Local Pay'[SexGroup] = "All")
+		formatString: £#,##0.0
+		displayFolder: Pay Distribution
+		lineageTag: c6a879ac-85ee-4f49-b7d1-590978e9fdea
+
+	measure 'P90 Weekly Pay GBP' = CALCULATE(AVERAGE('Fact Local Pay'[P90]), 'Fact Local Pay'[SexGroup] = "All")
+		formatString: £#,##0.0
+		displayFolder: Pay Distribution
+		lineageTag: 603d7d00-e191-49ba-84f7-0f0478654f79
+
+	measure 'Pay P90 to P10 Ratio' = DIVIDE(CALCULATE(AVERAGE('Fact Local Pay'[P90]), 'Fact Local Pay'[SexGroup] = "All"), CALCULATE(AVERAGE('Fact Local Pay'[P10]), 'Fact Local Pay'[SexGroup] = "All"))
+		formatString: 0.00"x"
+		displayFolder: Pay Distribution
+		lineageTag: b14c7974-18aa-4a6b-8c91-62c2ab0301d6
+
+	measure 'Total Jobs (Thousands)' = CALCULATE(SUM('Fact Local Pay'[JobsThousand]), 'Fact Local Pay'[SexGroup] = "All")
+		formatString: #,##0.0
+		displayFolder: Pay Metrics
+		lineageTag: 60637063-63e1-4f49-83ff-120cd19e1cd7
+
+	column AreaName
+		dataType: string
+		lineageTag: b4b2f6b4-94c2-41b5-9f76-f406ffb6a103
+		summarizeBy: none
+		sourceColumn: AreaName
+
+	column AreaCode
+		dataType: string
+		lineageTag: f6e286ab-4be7-4e9e-96e1-612f89620870
+		summarizeBy: none
+		sourceColumn: AreaCode
+
+	column JobsThousand
+		dataType: double
+		lineageTag: 62c0e662-be33-4d30-8308-3d63e82e9c30
+		summarizeBy: none
+		sourceColumn: JobsThousand
+
+	column MedianWeeklyPayGBP
+		dataType: double
+		lineageTag: 42eadd46-ecb4-4802-ab57-845870c20195
+		summarizeBy: none
+		sourceColumn: MedianWeeklyPayGBP
+
+	column MedianYoYGrowthPct
+		dataType: double
+		lineageTag: 61f0863a-74e2-4b1d-9db0-92b6149bdcd6
+		summarizeBy: none
+		sourceColumn: MedianYoYGrowthPct
+
+	column MeanWeeklyPayGBP
+		dataType: double
+		lineageTag: 6f9b94f5-9d95-425f-8aa9-f774663a0522
+		summarizeBy: none
+		sourceColumn: MeanWeeklyPayGBP
+
+	column MeanYoYGrowthPct
+		dataType: double
+		lineageTag: c1f4abb6-1592-4580-bf0c-145622c38ff6
+		summarizeBy: none
+		sourceColumn: MeanYoYGrowthPct
+
+	column P10
+		dataType: double
+		lineageTag: 1e0cdd96-139c-43d9-b16f-49563877e3d7
+		summarizeBy: none
+		sourceColumn: P10
+
+	column P20
+		dataType: double
+		lineageTag: 94c24aa5-fbfb-478c-9caf-311837147a4b
+		summarizeBy: none
+		sourceColumn: P20
+
+	column P25
+		dataType: double
+		lineageTag: 113b0960-5398-4d60-9cf0-bdddf77c1808
+		summarizeBy: none
+		sourceColumn: P25
+
+	column P30
+		dataType: double
+		lineageTag: e17b156e-6b9e-4796-a98d-38bfb20d10d4
+		summarizeBy: none
+		sourceColumn: P30
+
+	column P40
+		dataType: double
+		lineageTag: c3664dc0-30c6-4870-9a5f-29e0f25de67b
+		summarizeBy: none
+		sourceColumn: P40
+
+	column P60
+		dataType: double
+		lineageTag: eca98b03-9bd6-4d48-81d9-40ab074177d1
+		summarizeBy: none
+		sourceColumn: P60
+
+	column P70
+		dataType: double
+		lineageTag: e3465b2b-87f6-41bf-87a6-593d8e6af535
+		summarizeBy: none
+		sourceColumn: P70
+
+	column P75
+		dataType: double
+		lineageTag: c1219498-1ec6-4a0d-8ed8-49fc9e27ab4c
+		summarizeBy: none
+		sourceColumn: P75
+
+	column P80
+		dataType: double
+		lineageTag: de7643ad-8df2-4a31-af96-95084481e898
+		summarizeBy: none
+		sourceColumn: P80
+
+	column P90
+		dataType: double
+		lineageTag: b2f8bf1a-b3cb-4e6c-a8aa-c1dc1c33d86f
+		summarizeBy: none
+		sourceColumn: P90
+
+	column SexGroup
+		dataType: string
+		lineageTag: bb00b7ab-c7b5-49a3-a2af-a40b112947db
+		summarizeBy: none
+		sourceColumn: SexGroup
+
+	column AreaLevel
+		dataType: string
+		lineageTag: 49009659-f13c-4b70-ada2-d0e4ee3c836f
+		summarizeBy: none
+		sourceColumn: AreaLevel
+
+	column PayYear
+		dataType: int64
+		lineageTag: 5fe3a180-29f5-4ca9-ada3-98a8835fc470
+		summarizeBy: none
+		sourceColumn: PayYear
+
+	partition 'Fact Local Pay-Partition' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(SourceDataFolder & "fact_local_pay_2025.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"AreaName", type text},
+				        {"AreaCode", type text},
+				        {"JobsThousand", type number},
+				        {"MedianWeeklyPayGBP", type number},
+				        {"MedianYoYGrowthPct", type number},
+				        {"MeanWeeklyPayGBP", type number},
+				        {"MeanYoYGrowthPct", type number},
+				        {"P10", type number},
+				        {"P20", type number},
+				        {"P25", type number},
+				        {"P30", type number},
+				        {"P40", type number},
+				        {"P60", type number},
+				        {"P70", type number},
+				        {"P75", type number},
+				        {"P80", type number},
+				        {"P90", type number},
+				        {"SexGroup", type text},
+				        {"AreaLevel", type text},
+				        {"PayYear", Int64.Type}
+				    })
+				in
+				    #"Changed Type"
+

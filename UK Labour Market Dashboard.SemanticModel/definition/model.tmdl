@@ -1,0 +1,27 @@
+model Model
+	culture: en-GB
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-GB
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+annotation PBI_QueryOrder = ["Dim Area","Dim Date","Fact Local Claimant","Fact Local Pay","Fact Local Unemployment History","Fact National Monthly","Fact Region Monthly","Outlook Snapshot","SourceDataFolder"]
+
+ref table 'Dim Area'
+ref table 'Dim Date'
+ref table 'Fact Local Claimant'
+ref table 'Fact Local Pay'
+ref table 'Fact Local Unemployment History'
+ref table 'Fact National Monthly'
+ref table 'Fact Region Monthly'
+ref table 'Outlook Snapshot'
+ref table DateTableTemplate_50af231a-7eb1-4101-972d-b151b49acb2a
+ref table LocalDateTable_871d847c-89aa-4fbd-ae96-7b3771de1383
+
+ref cultureInfo en-GB
+

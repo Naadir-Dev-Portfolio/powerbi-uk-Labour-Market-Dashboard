@@ -1,0 +1,147 @@
+table 'Fact Local Claimant'
+	lineageTag: 0606240b-724e-4722-87f8-0539687fc07b
+
+	measure 'Local Claimant Count' = SUM('Fact Local Claimant'[PeopleCount])
+		formatString: #,##0
+		displayFolder: Local Metrics
+		lineageTag: 9f39e25c-d529-4f7a-bc02-d3cc44799a4a
+
+	measure 'Local Claimant Rate %' = AVERAGE('Fact Local Claimant'[PeopleRatePct]) / 100
+		formatString: 0.0%
+		displayFolder: Local Metrics
+		lineageTag: e9d11d10-ad28-4ae5-97d5-744f3e57efa7
+
+	measure 'Local Claimant YoY Change' = SUM('Fact Local Claimant'[PeopleYoYChange])
+		formatString: #,##0
+		displayFolder: Local Metrics
+		lineageTag: f7d0dfdc-7562-4afd-87bd-16226cde74c5
+
+	measure 'Male Claimant Count' = SUM('Fact Local Claimant'[MenCount])
+		formatString: #,##0
+		displayFolder: Local Metrics
+		lineageTag: 32999af5-9ae1-4dc0-aeec-8f843136a63a
+
+	measure 'Female Claimant Count' = SUM('Fact Local Claimant'[WomenCount])
+		formatString: #,##0
+		displayFolder: Local Metrics
+		lineageTag: a130b4d2-3c94-4e85-bd7d-19c35fa56052
+
+	column SnapshotDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3b7a5d13-4ed9-487c-a1e6-1520c6bcf137
+		summarizeBy: none
+		sourceColumn: SnapshotDate
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column AreaName
+		dataType: string
+		lineageTag: e4742557-9819-4753-a418-1aaa08f63eb5
+		summarizeBy: none
+		sourceColumn: AreaName
+
+	column AreaCode
+		dataType: string
+		lineageTag: ebb07997-26c3-4f2c-a2ec-45f60a0ea390
+		summarizeBy: none
+		sourceColumn: AreaCode
+
+	column AreaLevel
+		dataType: string
+		lineageTag: 2537a859-9fca-461c-8192-187c1e067395
+		summarizeBy: none
+		sourceColumn: AreaLevel
+
+	column IsLocalArea
+		dataType: boolean
+		lineageTag: ef2676c7-48e4-4d41-bf12-c8f6ec463471
+		summarizeBy: none
+		sourceColumn: IsLocalArea
+
+	column MenCount
+		dataType: double
+		lineageTag: e07f7b52-2a1f-4a7d-a202-2eecb8850ea7
+		summarizeBy: none
+		sourceColumn: MenCount
+
+	column WomenCount
+		dataType: double
+		lineageTag: 80d462ab-f974-4cdc-960c-0bfb88cc77c1
+		summarizeBy: none
+		sourceColumn: WomenCount
+
+	column PeopleCount
+		dataType: double
+		lineageTag: 287da9bd-250b-4fd4-b786-ad99799a897e
+		summarizeBy: none
+		sourceColumn: PeopleCount
+
+	column MenRatePct
+		dataType: double
+		lineageTag: 640adbcc-b467-4dc1-acfd-eb20497f03a5
+		summarizeBy: none
+		sourceColumn: MenRatePct
+
+	column WomenRatePct
+		dataType: double
+		lineageTag: fd1a39eb-7cbc-44a0-87c3-5f49c72bc068
+		summarizeBy: none
+		sourceColumn: WomenRatePct
+
+	column PeopleRatePct
+		dataType: double
+		lineageTag: 9114c998-e852-4726-a40a-aabc23ff96ee
+		summarizeBy: none
+		sourceColumn: PeopleRatePct
+
+	column MenYoYChange
+		dataType: double
+		lineageTag: a34024d0-637f-46ec-b33d-82ad2b4502dc
+		summarizeBy: none
+		sourceColumn: MenYoYChange
+
+	column WomenYoYChange
+		dataType: double
+		lineageTag: 9af60500-588a-4ddf-9ec1-c779332afa1b
+		summarizeBy: none
+		sourceColumn: WomenYoYChange
+
+	column PeopleYoYChange
+		dataType: double
+		lineageTag: 71de4ce5-99db-46a1-b8ab-b872af420d03
+		summarizeBy: none
+		sourceColumn: PeopleYoYChange
+
+	column MenRateYoYChange
+		dataType: double
+		lineageTag: e74c3e4e-5322-4fd1-96d0-819cec8a85f5
+		summarizeBy: none
+		sourceColumn: MenRateYoYChange
+
+	partition 'Fact Local Claimant-Partition' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(SourceDataFolder & "fact_local_claimant_latest.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"SnapshotDate", type date},
+				        {"AreaName", type text},
+				        {"AreaCode", type text},
+				        {"AreaLevel", type text},
+				        {"IsLocalArea", type logical},
+				        {"MenCount", type number},
+				        {"WomenCount", type number},
+				        {"PeopleCount", type number},
+				        {"MenRatePct", type number},
+				        {"WomenRatePct", type number},
+				        {"PeopleRatePct", type number},
+				        {"MenYoYChange", type number},
+				        {"WomenYoYChange", type number},
+				        {"PeopleYoYChange", type number},
+				        {"MenRateYoYChange", type number}
+				    })
+				in
+				    #"Changed Type"
+

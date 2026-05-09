@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Power BI Labour Market Project Map</title>
+  <style>
+    :root {
+      --bg: #f3efe6;
+      --panel: #fffdf9;
+      --ink: #1f2b34;
+      --muted: #66727a;
+      --accent: #0f5f73;
+      --accent-soft: #dcecf1;
+      --warn: #9b4d2f;
+      --warn-soft: #f7e3da;
+      --ok: #2d6b4f;
+      --ok-soft: #dff1e7;
+      --border: #d9d2c8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(15,95,115,0.12), transparent 28%),
+        linear-gradient(180deg, #ebe3d5 0%, var(--bg) 42%, #f7f3ec 100%);
+    }
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 28px 20px 48px;
+    }
+    h1, h2, h3 { margin: 0 0 12px; }
+    p { margin: 0 0 10px; line-height: 1.5; }
+    .hero, .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 16px 34px rgba(31, 43, 52, 0.08);
+    }
+    .hero {
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    .hero-grid, .grid, .metric-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .hero-grid { grid-template-columns: 1.6fr 1fr; }
+    .metric-grid { grid-template-columns: repeat(4, 1fr); margin-top: 18px; }
+    .grid { grid-template-columns: repeat(3, 1fr); }
+    .card { padding: 20px; }
+    .badge {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .done { background: var(--ok-soft); color: var(--ok); }
+    .active { background: var(--accent-soft); color: var(--accent); }
+    .risk { background: var(--warn-soft); color: var(--warn); }
+    .metric {
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid #d9e7ec;
+      background: #f6fbfc;
+    }
+    .metric strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 22px;
+    }
+    .muted { color: var(--muted); }
+    .section-title { margin: 26px 0 14px; }
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.6;
+    }
+    code {
+      background: #edf2f4;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    @media (max-width: 980px) {
+      .hero-grid, .metric-grid, .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <span class="badge active">Current Build State</span>
+          <h1>UK Labour Market Dashboard</h1>
+          <p>The report is now structured around a summary-first story: is unemployment easing, steady, or deteriorating, and what do vacancies and pay suggest happens next?</p>
+          <p class="muted">Workspace: <code>Unemployment Dashboard.pbip</code></p>
+        </div>
+        <div>
+          <span class="badge risk">Latest Outlook</span>
+          <h3>Deteriorating</h3>
+          <p>Latest common signal month is <strong>February 2026</strong>. Claimants rose, vacancies fell, and real regular pay growth slipped slightly negative.</p>
+        </div>
+      </div>
+      <div class="metric-grid">
+        <div class="metric">
+          <span class="muted">Report pages created</span>
+          <strong>4</strong>
+        </div>
+        <div class="metric">
+          <span class="muted">Curated model tables</span>
+          <strong>8</strong>
+        </div>
+        <div class="metric">
+          <span class="muted">Latest claimant count</span>
+          <strong>1,667.4k</strong>
+        </div>
+        <div class="metric">
+          <span class="muted">3-month vacancies change</span>
+          <strong>-28.0k</strong>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="section-title">Status</h2>
+    <section class="grid">
+      <article class="card">
+        <span class="badge done">Complete</span>
+        <h3>Source acquisition</h3>
+        <ul>
+          <li>Official ONS source files downloaded</li>
+          <li>Source Data folder cleaned</li>
+          <li>Single ASHE workbook extracted for local pay</li>
+          <li>One-click <code>refresh_data.bat</code> added for future data refreshes</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="badge done">Complete</span>
+        <h3>Curated model layer</h3>
+        <ul>
+          <li><code>Model Data</code> folder created</li>
+          <li>National, regional, local, pay, and outlook tables prepared</li>
+          <li>Reusable prep script created</li>
+        </ul>
+      </article>
+      <article class="card">
+        <span class="badge active">In Progress</span>
+        <h3>Report build</h3>
+        <ul>
+          <li>Semantic model wired in TMDL</li>
+          <li>Executive Summary page added</li>
+          <li>Dim Area duplicate-key issue identified from screenshot and fixed</li>
+          <li>Visual placement is now underway across the remaining report pages</li>
+        </ul>
+      </article>
+    </section>
+
+    <h2 class="section-title">Narrative</h2>
+    <section class="grid">
+      <article class="card">
+        <h3>Main takeaway</h3>
+        <p>At the latest comparable month, the labour market is <strong>softening</strong> rather than stabilising.</p>
+        <ul>
+          <li>Claimant count rose by <strong>14.5k</strong> over 3 months</li>
+          <li>Vacancies fell by <strong>28.0k</strong> over 3 months</li>
+          <li>Real regular pay growth was <strong>-0.1%</strong> year on year</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>What the dashboard should say</h3>
+        <ul>
+          <li>Where unemployment pressure is worsening fastest</li>
+          <li>Whether national conditions are loosening or tightening</li>
+          <li>Whether pay is holding up or weakening alongside labour demand</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Why the summary page matters</h3>
+        <ul>
+          <li>One landing page for headline direction</li>
+          <li>Clear signal cards and trend evidence</li>
+          <li>Immediate transition into regional and local detail</li>
+        </ul>
+      </article>
+    </section>
+
+    <h2 class="section-title">Dashboard Pages</h2>
+    <section class="grid">
+      <article class="card">
+        <h3>1. Executive Summary</h3>
+        <ul>
+          <li>Direction card: improving, steady, or deteriorating</li>
+          <li>Headline and detail narrative cards</li>
+          <li>3-month and 12-month national signal cards</li>
+          <li>National trend line and vacancies trend line</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>2. Labour Market Overview</h3>
+        <ul>
+          <li>National claimant trend</li>
+          <li>Regional comparison for claimant counts and rates</li>
+          <li>Vacancy rate and pay trend context</li>
+          <li>Latest month comparison matrix</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>3. Local Area Explorer</h3>
+        <ul>
+          <li>Local claimant count map</li>
+          <li>Top and bottom local authority rankings</li>
+          <li>Modelled unemployment history by selected area</li>
+          <li>Area comparison matrix</li>
+        </ul>
+      </article>
+    </section>
+
+    <h2 class="section-title">Model Assets</h2>
+    <section class="grid">
+      <article class="card">
+        <h3>Curated files</h3>
+        <ul>
+          <li><code>dim_date.csv</code></li>
+          <li><code>dim_area.csv</code></li>
+          <li><code>fact_national_monthly.csv</code></li>
+          <li><code>fact_region_monthly.csv</code></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Curated files</h3>
+        <ul>
+          <li><code>fact_local_claimant_latest.csv</code></li>
+          <li><code>fact_local_unemployment_history.csv</code></li>
+          <li><code>fact_local_pay_2025.csv</code></li>
+          <li><code>outlook_snapshot.csv</code></li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Semantic model work completed</h3>
+        <ul>
+          <li>TMDL tables created</li>
+          <li>Relationships created</li>
+          <li>Core measures added</li>
+          <li>Validated through Tabular Editor round-trip</li>
+        </ul>
+      </article>
+    </section>
+
+    <h2 class="section-title">Immediate Next Steps</h2>
+    <section class="card">
+      <ul>
+        <li>When new ONS data is available, run <code>Source Data\refresh_data.bat</code> before refreshing Power BI</li>
+        <li>Open the PBIP in Power BI Desktop</li>
+        <li>Refresh the semantic model so the new TMDL tables load from <code>Source Data\Model Data</code></li>
+        <li>Confirm the 4 pages appear in the report</li>
+        <li>Place visuals using the measures and dimensions already prepared</li>
+        <li>Use this map to track what has been built and what remains manual</li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>

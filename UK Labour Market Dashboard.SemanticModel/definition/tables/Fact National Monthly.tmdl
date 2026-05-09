@@ -1,0 +1,278 @@
+table 'Fact National Monthly'
+	lineageTag: 056e16ff-1bcb-41ce-a381-c5007f55caa1
+
+	measure 'National Claimant Count (K)' = SUM('Fact National Monthly'[NationalClaimantCountK])
+		formatString: #,##0.0
+		displayFolder: National Metrics
+		lineageTag: dd33b705-fdcb-4a57-aecd-78327dd43103
+
+	measure 'National Claimant Rate %' = AVERAGE('Fact National Monthly'[NationalClaimantRatePct])
+		formatString: 0.0%
+		displayFolder: National Metrics
+		lineageTag: 48c9e9be-fec2-4022-a7c0-3b59178c5110
+
+	measure 'Vacancies (K)' = SUM('Fact National Monthly'[VacanciesK])
+		formatString: #,##0.0
+		displayFolder: National Metrics
+		lineageTag: e83b583b-7e8f-42b8-863f-9bdec8edf8dc
+
+	measure 'Vacancy Rate Per 100 Jobs' = AVERAGE('Fact National Monthly'[VacancyRatePer100Jobs])
+		formatString: 0.0
+		displayFolder: National Metrics
+		lineageTag: 63ee1aed-cc19-4d5c-8b49-4729bc1c6d9f
+
+	measure 'Real Regular Pay YoY %' = AVERAGE('Fact National Monthly'[RealRegularPayYoYSinglePct]) / 100
+		formatString: 0.0%
+		displayFolder: National Metrics
+		lineageTag: de98fc67-0f4a-4ff4-aa8f-54eeeea4598b
+
+	measure 'Real Regular Pay Level GBP' = AVERAGE('Fact National Monthly'[RealRegularPayLevelGBP])
+		formatString: £#,##0.0
+		displayFolder: National Metrics
+		lineageTag: 58565617-cc86-4b03-ab38-bca77add1720
+
+	measure 'Vacancies Per Claimant' = AVERAGE('Fact National Monthly'[VacanciesPerClaimant])
+		formatString: 0.00
+		displayFolder: National Metrics
+		lineageTag: aa7d2d83-0929-45da-b4f4-3bb4973d12cd
+
+	measure 'Real Total Pay YoY %' = AVERAGE('Fact National Monthly'[RealTotalPayYoYSinglePct]) / 100
+		formatString: 0.0%
+		displayFolder: National Metrics
+		lineageTag: 02ac4273-2eb8-4884-b113-5d4e18513f39
+
+	measure 'Claimant Count CY (K)' = VAR _LY = YEAR(CALCULATE(MAX('Outlook Snapshot'[SnapshotDate]), REMOVEFILTERS('Dim Date'))) VAR _MN = SELECTEDVALUE('Dim Date'[MonthShort]) RETURN IF(NOT ISBLANK(_MN), CALCULATE([National Claimant Count (K)], ALL('Dim Date'), 'Dim Date'[Year] = _LY, 'Dim Date'[MonthShort] = _MN), CALCULATE([National Claimant Count (K)], ALL('Dim Date'), 'Dim Date'[Year] = _LY))
+		formatString: #,##0.0
+		displayFolder: YoY Comparison
+		lineageTag: f7357810-4a3c-4d60-aa0b-e2efab69cb24
+
+	measure 'Claimant Count PY (K)' = VAR _LY = YEAR(CALCULATE(MAX('Outlook Snapshot'[SnapshotDate]), REMOVEFILTERS('Dim Date'))) VAR _MN = SELECTEDVALUE('Dim Date'[MonthShort]) RETURN IF(NOT ISBLANK(_MN), CALCULATE([National Claimant Count (K)], ALL('Dim Date'), 'Dim Date'[Year] = _LY - 1, 'Dim Date'[MonthShort] = _MN), CALCULATE([National Claimant Count (K)], ALL('Dim Date'), 'Dim Date'[Year] = _LY - 1))
+		formatString: #,##0.0
+		displayFolder: YoY Comparison
+		lineageTag: 0be98fed-0998-45a2-a777-fd8db02b0485
+
+	measure 'Vacancies CY (K)' = VAR _LY = YEAR(CALCULATE(MAX('Outlook Snapshot'[SnapshotDate]), REMOVEFILTERS('Dim Date'))) VAR _MN = SELECTEDVALUE('Dim Date'[MonthShort]) RETURN IF(NOT ISBLANK(_MN), CALCULATE([Vacancies (K)], ALL('Dim Date'), 'Dim Date'[Year] = _LY, 'Dim Date'[MonthShort] = _MN), CALCULATE([Vacancies (K)], ALL('Dim Date'), 'Dim Date'[Year] = _LY))
+		formatString: #,##0.0
+		displayFolder: YoY Comparison
+		lineageTag: db6871b2-4392-4197-999f-6d3f29310a3e
+
+	measure 'Vacancies PY (K)' = VAR _LY = YEAR(CALCULATE(MAX('Outlook Snapshot'[SnapshotDate]), REMOVEFILTERS('Dim Date'))) VAR _MN = SELECTEDVALUE('Dim Date'[MonthShort]) RETURN IF(NOT ISBLANK(_MN), CALCULATE([Vacancies (K)], ALL('Dim Date'), 'Dim Date'[Year] = _LY - 1, 'Dim Date'[MonthShort] = _MN), CALCULATE([Vacancies (K)], ALL('Dim Date'), 'Dim Date'[Year] = _LY - 1))
+		formatString: #,##0.0
+		displayFolder: YoY Comparison
+		lineageTag: 06b56180-7b65-4a40-af78-e984a2c09693
+
+	measure 'Real Total Pay Level GBP' = AVERAGE('Fact National Monthly'[RealTotalPayLevelGBP])
+		formatString: £#,##0.0
+		displayFolder: National Metrics
+		lineageTag: 4267fe08-fd98-44a0-9e50-89473ecc4474
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2791d3c0-ec1d-4e6b-92d4-2b8de8be7b61
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column NationalClaimantCountK
+		dataType: double
+		lineageTag: cac8f08c-5ee6-4b1e-a44d-e01aedaffb23
+		summarizeBy: none
+		sourceColumn: NationalClaimantCountK
+
+	column NationalClaimantRatePct
+		dataType: double
+		lineageTag: 298c0375-bdb8-4ffb-9c7e-a8c409331202
+		summarizeBy: none
+		sourceColumn: NationalClaimantRatePct
+
+	column VacanciesK
+		dataType: double
+		lineageTag: 5fe96c10-2d95-4f52-a0bb-b316adf0b05f
+		summarizeBy: none
+		sourceColumn: VacanciesK
+
+	column VacancyRatePer100Jobs
+		dataType: double
+		lineageTag: fdb77370-42c5-427a-ba0f-5a0a08aec34f
+		summarizeBy: none
+		sourceColumn: VacancyRatePer100Jobs
+
+	column RealRegularPayIndex
+		dataType: double
+		lineageTag: 6b50217f-b4e5-4c39-9fd7-d73b506e736f
+		summarizeBy: none
+		sourceColumn: RealRegularPayIndex
+
+	column RealRegularPayYoYSinglePct
+		dataType: double
+		lineageTag: 8d9d0f97-db1e-4db4-bdb4-5aaf61531e24
+		summarizeBy: none
+		sourceColumn: RealRegularPayYoYSinglePct
+
+	column RealRegularPayLevelGBP
+		dataType: double
+		lineageTag: 56128cc3-41f9-4916-9443-4d47cc7a298d
+		summarizeBy: none
+		sourceColumn: RealRegularPayLevelGBP
+
+	column RealTotalPayIndex
+		dataType: double
+		lineageTag: 4c3032fd-bb83-4e5e-ac70-e8a951fe9368
+		summarizeBy: none
+		sourceColumn: RealTotalPayIndex
+
+	column RealTotalPayYoYSinglePct
+		dataType: double
+		lineageTag: 565e1e2f-10d1-41b4-a2a4-43ece85c9177
+		summarizeBy: none
+		sourceColumn: RealTotalPayYoYSinglePct
+
+	column RealTotalPayLevelGBP
+		dataType: double
+		lineageTag: 23a34305-d066-412b-a5e3-f6ecdefd43db
+		summarizeBy: none
+		sourceColumn: RealTotalPayLevelGBP
+
+	column VacanciesPerClaimant
+		dataType: double
+		lineageTag: 31f62c6a-cca8-4d71-913e-4c48cb640b52
+		summarizeBy: none
+		sourceColumn: VacanciesPerClaimant
+
+	column NationalClaimantCountK_3MDelta
+		dataType: double
+		isHidden
+		lineageTag: f121c76a-37c0-4a3a-ac93-261c8f783937
+		summarizeBy: none
+		sourceColumn: NationalClaimantCountK_3MDelta
+
+	column NationalClaimantCountK_12MDelta
+		dataType: double
+		isHidden
+		lineageTag: d2c07e51-4a51-4ab2-ad05-8c1648e49ede
+		summarizeBy: none
+		sourceColumn: NationalClaimantCountK_12MDelta
+
+	column NationalClaimantRatePct_3MDelta
+		dataType: double
+		isHidden
+		lineageTag: f42fb87b-7a99-4680-bec1-d69af7ce8dcd
+		summarizeBy: none
+		sourceColumn: NationalClaimantRatePct_3MDelta
+
+	column NationalClaimantRatePct_12MDelta
+		dataType: double
+		isHidden
+		lineageTag: bf0e8002-2d94-49ac-8cc7-cf6be2b3f68b
+		summarizeBy: none
+		sourceColumn: NationalClaimantRatePct_12MDelta
+
+	column VacanciesK_3MDelta
+		dataType: double
+		isHidden
+		lineageTag: a4dc522b-2d6e-402c-a4c3-7b4436236f98
+		summarizeBy: none
+		sourceColumn: VacanciesK_3MDelta
+
+	column VacanciesK_12MDelta
+		dataType: double
+		isHidden
+		lineageTag: 66bb1ee3-8bf5-4f4b-bc44-3c6b97dd07ef
+		summarizeBy: none
+		sourceColumn: VacanciesK_12MDelta
+
+	column VacancyRatePer100Jobs_3MDelta
+		dataType: double
+		isHidden
+		lineageTag: af4d7656-d719-4dcd-ab79-2b4c095535a1
+		summarizeBy: none
+		sourceColumn: VacancyRatePer100Jobs_3MDelta
+
+	column VacancyRatePer100Jobs_12MDelta
+		dataType: double
+		isHidden
+		lineageTag: f79331ed-4b7f-4714-bcbb-4e2e3ad5b93e
+		summarizeBy: none
+		sourceColumn: VacancyRatePer100Jobs_12MDelta
+
+	column RealRegularPayYoYSinglePct_3MDelta
+		dataType: double
+		isHidden
+		lineageTag: 960be62d-a883-45c5-ac71-6c01156236c4
+		summarizeBy: none
+		sourceColumn: RealRegularPayYoYSinglePct_3MDelta
+
+	column RealRegularPayYoYSinglePct_12MDelta
+		dataType: double
+		isHidden
+		lineageTag: 7f8628ee-d666-47c8-955f-9db6da8e5d27
+		summarizeBy: none
+		sourceColumn: RealRegularPayYoYSinglePct_12MDelta
+
+	column RealTotalPayYoYSinglePct_3MDelta
+		dataType: double
+		isHidden
+		lineageTag: eff8eae5-b468-49fe-92c9-0784a6fe9704
+		summarizeBy: none
+		sourceColumn: RealTotalPayYoYSinglePct_3MDelta
+
+	column RealTotalPayYoYSinglePct_12MDelta
+		dataType: double
+		isHidden
+		lineageTag: 6b33e4d5-5531-46d8-a9c3-5622fd576a11
+		summarizeBy: none
+		sourceColumn: RealTotalPayYoYSinglePct_12MDelta
+
+	column VacanciesPerClaimant_3MDelta
+		dataType: double
+		isHidden
+		lineageTag: 67376fc0-5d34-40f0-9fd7-09689e6baa7b
+		summarizeBy: none
+		sourceColumn: VacanciesPerClaimant_3MDelta
+
+	column VacanciesPerClaimant_12MDelta
+		dataType: double
+		isHidden
+		lineageTag: 897eb692-0cb9-423b-af06-4d99e0a165a4
+		summarizeBy: none
+		sourceColumn: VacanciesPerClaimant_12MDelta
+
+	partition 'Fact National Monthly-Partition' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(SourceDataFolder & "fact_national_monthly.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"Date", type date},
+				        {"NationalClaimantCountK", type number},
+				        {"NationalClaimantRatePct", type number},
+				        {"VacanciesK", type number},
+				        {"VacancyRatePer100Jobs", type number},
+				        {"RealRegularPayIndex", type number},
+				        {"RealRegularPayYoYSinglePct", type number},
+				        {"RealRegularPayLevelGBP", type number},
+				        {"RealTotalPayIndex", type number},
+				        {"RealTotalPayYoYSinglePct", type number},
+				        {"RealTotalPayLevelGBP", type number},
+				        {"VacanciesPerClaimant", type number},
+				        {"NationalClaimantCountK_3MDelta", type number},
+				        {"NationalClaimantCountK_12MDelta", type number},
+				        {"NationalClaimantRatePct_3MDelta", type number},
+				        {"NationalClaimantRatePct_12MDelta", type number},
+				        {"VacanciesK_3MDelta", type number},
+				        {"VacanciesK_12MDelta", type number},
+				        {"VacancyRatePer100Jobs_3MDelta", type number},
+				        {"VacancyRatePer100Jobs_12MDelta", type number},
+				        {"RealRegularPayYoYSinglePct_3MDelta", type number},
+				        {"RealRegularPayYoYSinglePct_12MDelta", type number},
+				        {"RealTotalPayYoYSinglePct_3MDelta", type number},
+				        {"RealTotalPayYoYSinglePct_12MDelta", type number},
+				        {"VacanciesPerClaimant_3MDelta", type number},
+				        {"VacanciesPerClaimant_12MDelta", type number}
+				    })
+				in
+				    #"Changed Type"
+

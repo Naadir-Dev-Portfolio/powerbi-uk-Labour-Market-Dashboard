@@ -1,0 +1,89 @@
+table 'Fact Local Unemployment History'
+	lineageTag: 7cb0d6a8-dda5-4bca-ac42-2ba1ea95af72
+
+	measure 'Modelled Unemployment Count' = SUM('Fact Local Unemployment History'[UnemploymentCount])
+		formatString: #,##0
+		displayFolder: Local Metrics
+		lineageTag: 9a262916-46dd-43d9-a352-e8761ea81c86
+
+	measure 'Modelled Unemployment Rate %' = AVERAGE('Fact Local Unemployment History'[UnemploymentRatePct]) / 100
+		formatString: 0.0%
+		displayFolder: Local Metrics
+		lineageTag: dbd54f65-d418-4dcf-9e1d-84ffe6bb2d82
+
+	column AreaName
+		dataType: string
+		lineageTag: 3f0d7ec8-bc69-4cb4-92ed-882ca9a48508
+		summarizeBy: none
+		sourceColumn: AreaName
+
+	column AreaCode
+		dataType: string
+		lineageTag: 42d957ce-fe77-4558-ad7a-038009edf8cf
+		summarizeBy: none
+		sourceColumn: AreaCode
+
+	column PeriodLabel
+		dataType: string
+		lineageTag: 12011810-421e-4898-9812-b095b9def7ab
+		summarizeBy: none
+		sourceColumn: PeriodLabel
+		sortByColumn: PeriodSort
+
+	column UnemploymentCount
+		dataType: double
+		lineageTag: 4a6d9051-44fe-43ca-b771-20658987e7f0
+		summarizeBy: none
+		sourceColumn: UnemploymentCount
+
+	column UnemploymentCountCI
+		dataType: double
+		lineageTag: 3041c632-26af-4040-bc32-97cbe2252977
+		summarizeBy: none
+		sourceColumn: UnemploymentCountCI
+
+	column UnemploymentRatePct
+		dataType: double
+		lineageTag: 89e09c04-ec93-4a7c-87c0-395dbba95bd4
+		summarizeBy: none
+		sourceColumn: UnemploymentRatePct
+
+	column UnemploymentRateCI
+		dataType: double
+		lineageTag: 87a3121d-078c-44ba-bb88-66e84c5a474c
+		summarizeBy: none
+		sourceColumn: UnemploymentRateCI
+
+	column PeriodSort
+		dataType: int64
+		isHidden
+		lineageTag: d65ec514-b9f1-4255-b07f-e1ae1ea3472e
+		summarizeBy: none
+		sourceColumn: PeriodSort
+
+	column AreaLevel
+		dataType: string
+		lineageTag: 1e981bea-80c2-4495-a929-8113c8ea1eb2
+		summarizeBy: none
+		sourceColumn: AreaLevel
+
+	partition 'Fact Local Unemployment History-Partition' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(SourceDataFolder & "fact_local_unemployment_history.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"AreaName", type text},
+				        {"AreaCode", type text},
+				        {"PeriodLabel", type text},
+				        {"UnemploymentCount", type number},
+				        {"UnemploymentCountCI", type number},
+				        {"UnemploymentRatePct", type number},
+				        {"UnemploymentRateCI", type number},
+				        {"PeriodSort", Int64.Type},
+				        {"AreaLevel", type text}
+				    })
+				in
+				    #"Changed Type"
+

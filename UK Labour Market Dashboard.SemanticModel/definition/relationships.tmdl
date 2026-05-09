@@ -1,0 +1,37 @@
+relationship 'Fact National Monthly to Dim Date'
+	fromColumn: 'Fact National Monthly'.Date
+	toColumn: 'Dim Date'.Date
+
+relationship 'Fact Region Monthly to Dim Date'
+	fromColumn: 'Fact Region Monthly'.Date
+	toColumn: 'Dim Date'.Date
+
+relationship 'Fact Region Monthly to Dim Area'
+	fromColumn: 'Fact Region Monthly'.AreaCode
+	toColumn: 'Dim Area'.AreaCode
+
+relationship 'Fact Local Claimant to Dim Date'
+	fromColumn: 'Fact Local Claimant'.SnapshotDate
+	toColumn: 'Dim Date'.Date
+
+relationship 'Fact Local Claimant to Dim Area'
+	fromColumn: 'Fact Local Claimant'.AreaCode
+	toColumn: 'Dim Area'.AreaCode
+
+relationship 'Fact Local Unemployment History to Dim Area'
+	fromColumn: 'Fact Local Unemployment History'.AreaCode
+	toColumn: 'Dim Area'.AreaCode
+
+relationship 'Fact Local Pay to Dim Area'
+	fromColumn: 'Fact Local Pay'.AreaCode
+	toColumn: 'Dim Area'.AreaCode
+
+relationship 'Outlook Snapshot to Dim Date'
+	fromColumn: 'Outlook Snapshot'.SnapshotDate
+	toColumn: 'Dim Date'.Date
+
+relationship 80ae1236-0ed8-44f3-a2f9-75e1b30a55fb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Dim Date'.Date
+	toColumn: LocalDateTable_871d847c-89aa-4fbd-ae96-7b3771de1383.Date
+

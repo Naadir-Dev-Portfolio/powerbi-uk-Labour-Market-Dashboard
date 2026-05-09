@@ -1,0 +1,19 @@
+{
+  "section": "powerbi",
+  "category": "dashboards",
+  "n": 1,
+  "title": "UK Labour Market Dashboard",
+  "img": "powerbi-uk-labour-market-dashboard.png",
+  "imgFeatured": "powerbi-uk-labour-market-dashboard-featured.png",
+  "desc": "Labour market dashboard tracking UK unemployment trends, claimant counts, and regional variation using official ONS and DWP data. Live interactive version published on Power BI service.",
+  "demo": "https://app.powerbi.com/view?r=eyJrIjoiNTg5MGQxN2YtZTNjZi00OGJkLWI1YTQtOGI3ZDFhYjFiOWFjIiwidCI6IjFmMjM5NGIwLWJiZmUtNDZlYS04MDIyLTFhZjJiZjg4ZDBkZCJ9",
+  "code": "https://github.com/Naadir-Dev-Portfolio/powerbi-uk-Labour-Market-Dashboard",
+  "details": "https://github.com/Naadir-Dev-Portfolio/powerbi-uk-Labour-Market-Dashboard/blob/main/README.md",
+  "tags": [
+    "Power BI",
+    "DAX",
+    "Power Query",
+    "PBIP",
+    "Labour Market"
+  ]
+}

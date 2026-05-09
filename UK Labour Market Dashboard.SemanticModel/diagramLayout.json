@@ -1,0 +1,119 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1059.8453386811639,
+            "y": 328.96243414117407
+          },
+          "nodeIndex": "Dim Area",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 405.78434420316989,
+            "y": 283.64327966672045
+          },
+          "nodeIndex": "Dim Date",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 756.66786163268443,
+            "y": 49.783522928002725
+          },
+          "nodeIndex": "Fact Local Claimant",
+          "nodeLineageTag": "0606240b-724e-4722-87f8-0539687fc07b",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1344.0219197474225,
+            "y": 574.64521392411086
+          },
+          "nodeIndex": "Fact Local Pay",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1396.3444884224095,
+            "y": 224.36068007946204
+          },
+          "nodeIndex": "Fact Local Unemployment History",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50,
+            "y": 300.28662663758439
+          },
+          "nodeIndex": "Fact National Monthly",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 689.99563648369576,
+            "y": 464.73771293424232
+          },
+          "nodeIndex": "Fact Region Monthly",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 121.61469929478994,
+            "y": -50
+          },
+          "nodeIndex": "Outlook Snapshot",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 63.287087723234038,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

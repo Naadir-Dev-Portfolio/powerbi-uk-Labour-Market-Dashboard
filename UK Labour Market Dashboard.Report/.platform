@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "UK Labour Market Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "04da108d-3859-417c-8b67-9eef65b36441"
+  }
+}

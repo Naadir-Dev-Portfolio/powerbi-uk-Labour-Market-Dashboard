@@ -1,0 +1,441 @@
+AreaName,AreaCode,AreaLevel,AreaSort,IsLocalArea
+England,E92000001,Country,1,False
+Northern Ireland,N92000002,Country,2,False
+Scotland,S92000003,Country,3,False
+Wales,W92000004,Country,4,False
+Cambridgeshire,E10000003,County or combined area,1,False
+Derbyshire,E10000007,County or combined area,2,False
+Devon,E10000008,County or combined area,3,False
+East Sussex,E10000011,County or combined area,4,False
+Essex,E10000012,County or combined area,5,False
+Gloucestershire,E10000013,County or combined area,6,False
+Greater Manchester,E11000001,County or combined area,7,False
+Hampshire,E10000014,County or combined area,8,False
+Hertfordshire,E10000015,County or combined area,9,False
+Kent,E10000016,County or combined area,10,False
+Lancashire,E10000017,County or combined area,11,False
+Leicestershire,E10000018,County or combined area,12,False
+Lincolnshire,E10000019,County or combined area,13,False
+Merseyside,E11000002,County or combined area,14,False
+Norfolk,E10000020,County or combined area,15,False
+Nottinghamshire,E10000024,County or combined area,16,False
+Oxfordshire,E10000025,County or combined area,17,False
+South Yorkshire,E11000003,County or combined area,18,False
+Staffordshire,E10000028,County or combined area,19,False
+Suffolk,E10000029,County or combined area,20,False
+Surrey,E10000030,County or combined area,21,False
+Tyne and Wear,E11000007,County or combined area,22,False
+Warwickshire,E10000031,County or combined area,23,False
+West Midlands (Metropolitan County),E11000005,County or combined area,24,False
+West Sussex,E10000032,County or combined area,25,False
+West Yorkshire,E11000006,County or combined area,26,False
+Worcestershire,E10000034,County or combined area,27,False
+Aberdeen City,S12000033,Local authority,1,True
+Aberdeenshire,S12000034,Local authority,2,True
+Adur,E07000223,Local authority,3,True
+Allerdale,E07000026,Local authority,4,True
+Amber Valley,E07000032,Local authority,5,True
+Angus,S12000041,Local authority,6,True
+Antrim and Newtownabbey,N09000001,Local authority,7,True
+Ards and North Down,N09000011,Local authority,8,True
+Argyll & Bute,S12000035,Local authority,9,True
+"Armagh City, Banbridge and Craigavon",N09000002,Local authority,10,True
+Arun,E07000224,Local authority,11,True
+Ashfield,E07000170,Local authority,12,True
+Ashford,E07000105,Local authority,13,True
+Aylesbury Vale,E07000004,Local authority,14,True
+Babergh,E07000200,Local authority,15,True
+Barking and Dagenham,E09000002,Local authority,16,True
+Barnet,E09000003,Local authority,17,True
+Barnsley,E08000016,Local authority,18,True
+Barnsley,E08000038,Local authority,19,True
+Barrow-in-Furness,E07000027,Local authority,20,True
+Basildon,E07000066,Local authority,21,True
+Basingstoke and Deane,E07000084,Local authority,22,True
+Bassetlaw,E07000171,Local authority,23,True
+Bath and North East Somerset,E06000022,Local authority,24,True
+Bedford,E06000055,Local authority,25,True
+Belfast,N09000003,Local authority,26,True
+Bexley,E09000004,Local authority,27,True
+Birmingham,E08000025,Local authority,28,True
+Blaby,E07000129,Local authority,29,True
+Blackburn with Darwen,E06000008,Local authority,30,True
+Blackpool,E06000009,Local authority,31,True
+Blaenau Gwent,W06000019,Local authority,32,True
+Bolsover,E07000033,Local authority,33,True
+Bolton,E08000001,Local authority,34,True
+Boston,E07000136,Local authority,35,True
+"Bournemouth, Christchurch and Poole",E06000058,Local authority,36,True
+Bracknell Forest,E06000036,Local authority,37,True
+Bradford,E08000032,Local authority,38,True
+Braintree,E07000067,Local authority,39,True
+Breckland,E07000143,Local authority,40,True
+Brent,E09000005,Local authority,41,True
+Brentwood,E07000068,Local authority,42,True
+Bridgend,W06000013,Local authority,43,True
+Brighton and Hove,E06000043,Local authority,44,True
+"Bristol, City of",E06000023,Local authority,45,True
+Broadland,E07000144,Local authority,46,True
+Bromley,E09000006,Local authority,47,True
+Bromsgrove,E07000234,Local authority,48,True
+Broxbourne,E07000095,Local authority,49,True
+Broxtowe,E07000172,Local authority,50,True
+Buckinghamshire,E06000060,Local authority,51,True
+Burnley,E07000117,Local authority,52,True
+Bury,E08000002,Local authority,53,True
+Caerphilly,W06000018,Local authority,54,True
+Calderdale,E08000033,Local authority,55,True
+Cambridge,E07000008,Local authority,56,True
+Camden,E09000007,Local authority,57,True
+Cannock Chase,E07000192,Local authority,58,True
+Canterbury,E07000106,Local authority,59,True
+Cardiff,W06000015,Local authority,60,True
+Carlisle,E07000028,Local authority,61,True
+Carmarthenshire,W06000010,Local authority,62,True
+Castle Point,E07000069,Local authority,63,True
+Causeway Coast and Glens,N09000004,Local authority,64,True
+Central Bedfordshire,E06000056,Local authority,65,True
+Ceredigion,W06000008,Local authority,66,True
+Charnwood,E07000130,Local authority,67,True
+Chelmsford,E07000070,Local authority,68,True
+Cheltenham,E07000078,Local authority,69,True
+Cherwell,E07000177,Local authority,70,True
+Cheshire East,E06000049,Local authority,71,True
+Cheshire West and Chester,E06000050,Local authority,72,True
+Chesterfield,E07000034,Local authority,73,True
+Chichester,E07000225,Local authority,74,True
+Chiltern,E07000005,Local authority,75,True
+Chorley,E07000118,Local authority,76,True
+City of Edinburgh,S12000036,Local authority,77,True
+City of London,E09000001,Local authority,78,True
+Clackmannanshire,S12000005,Local authority,79,True
+Colchester,E07000071,Local authority,80,True
+Conwy,W06000003,Local authority,81,True
+Copeland,E07000029,Local authority,82,True
+Corby,E07000150,Local authority,83,True
+Cornwall,E06000052,Local authority,84,True
+Cotswold,E07000079,Local authority,85,True
+County Durham,E06000047,Local authority,86,True
+Coventry,E08000026,Local authority,87,True
+Craven,E07000163,Local authority,88,True
+Crawley,E07000226,Local authority,89,True
+Croydon,E09000008,Local authority,90,True
+Cumberland,E06000063,Local authority,91,True
+Dacorum,E07000096,Local authority,92,True
+Darlington,E06000005,Local authority,93,True
+Dartford,E07000107,Local authority,94,True
+Daventry,E07000151,Local authority,95,True
+Denbighshire,W06000004,Local authority,96,True
+Derby,E06000015,Local authority,97,True
+Derbyshire Dales,E07000035,Local authority,98,True
+Derry City and Strabane,N09000005,Local authority,99,True
+Doncaster,E08000017,Local authority,100,True
+Dorset,E06000059,Local authority,101,True
+Dover,E07000108,Local authority,102,True
+Dudley,E08000027,Local authority,103,True
+Dumfries & Galloway,S12000006,Local authority,104,True
+Dundee City,S12000042,Local authority,105,True
+Ealing,E09000009,Local authority,106,True
+East Ayrshire,S12000008,Local authority,107,True
+East Cambridgeshire,E07000009,Local authority,108,True
+East Devon,E07000040,Local authority,109,True
+East Dunbartonshire,S12000045,Local authority,110,True
+East Hampshire,E07000085,Local authority,111,True
+East Hertfordshire,E07000242,Local authority,112,True
+East Lindsey,E07000137,Local authority,113,True
+East Lothian,S12000010,Local authority,114,True
+East Northamptonshire,E07000152,Local authority,115,True
+East Renfrewshire,S12000011,Local authority,116,True
+East Riding of Yorkshire,E06000011,Local authority,117,True
+East Staffordshire,E07000193,Local authority,118,True
+East Suffolk,E07000244,Local authority,119,True
+Eastbourne,E07000061,Local authority,120,True
+Eastleigh,E07000086,Local authority,121,True
+Eden,E07000030,Local authority,122,True
+Elmbridge,E07000207,Local authority,123,True
+Enfield,E09000010,Local authority,124,True
+Epping Forest,E07000072,Local authority,125,True
+Epsom and Ewell,E07000208,Local authority,126,True
+Erewash,E07000036,Local authority,127,True
+Exeter,E07000041,Local authority,128,True
+Falkirk,S12000014,Local authority,129,True
+Fareham,E07000087,Local authority,130,True
+Fenland,E07000010,Local authority,131,True
+Fermanagh and Omagh,N09000006,Local authority,132,True
+Fife,S12000047,Local authority,133,True
+Fife,S12000015,Local authority,134,True
+Flintshire,W06000005,Local authority,135,True
+Folkestone and Hythe,E07000112,Local authority,136,True
+Forest of Dean,E07000080,Local authority,137,True
+Fylde,E07000119,Local authority,138,True
+Gateshead,E08000037,Local authority,139,True
+Gedling,E07000173,Local authority,140,True
+Glasgow City,S12000049,Local authority,141,True
+Glasgow City,S12000046,Local authority,142,True
+Gloucester,E07000081,Local authority,143,True
+Gosport,E07000088,Local authority,144,True
+Gravesham,E07000109,Local authority,145,True
+Great Yarmouth,E07000145,Local authority,146,True
+Greenwich,E09000011,Local authority,147,True
+Guildford,E07000209,Local authority,148,True
+Gwynedd,W06000002,Local authority,149,True
+Hackney,E09000012,Local authority,150,True
+Halton,E06000006,Local authority,151,True
+Hambleton,E07000164,Local authority,152,True
+Hammersmith and Fulham,E09000013,Local authority,153,True
+Harborough,E07000131,Local authority,154,True
+Haringey,E09000014,Local authority,155,True
+Harlow,E07000073,Local authority,156,True
+Harrogate,E07000165,Local authority,157,True
+Harrow,E09000015,Local authority,158,True
+Hart,E07000089,Local authority,159,True
+Hartlepool,E06000001,Local authority,160,True
+Hastings,E07000062,Local authority,161,True
+Havant,E07000090,Local authority,162,True
+Havering,E09000016,Local authority,163,True
+"Herefordshire, County of",E06000019,Local authority,164,True
+Hertsmere,E07000098,Local authority,165,True
+High Peak,E07000037,Local authority,166,True
+Highland,S12000017,Local authority,167,True
+Hillingdon,E09000017,Local authority,168,True
+Hinckley and Bosworth,E07000132,Local authority,169,True
+Horsham,E07000227,Local authority,170,True
+Hounslow,E09000018,Local authority,171,True
+Huntingdonshire,E07000011,Local authority,172,True
+Hyndburn,E07000120,Local authority,173,True
+Inverclyde,S12000018,Local authority,174,True
+Ipswich,E07000202,Local authority,175,True
+Isle of Anglesey,W06000001,Local authority,176,True
+Isle of Wight,E06000046,Local authority,177,True
+Isles of Scilly,E06000053,Local authority,178,True
+Islington,E09000019,Local authority,179,True
+Kensington and Chelsea,E09000020,Local authority,180,True
+Kettering,E07000153,Local authority,181,True
+King's Lynn and West Norfolk,E07000146,Local authority,182,True
+"Kingston upon Hull, City of",E06000010,Local authority,183,True
+Kingston upon Thames,E09000021,Local authority,184,True
+Kirklees,E08000034,Local authority,185,True
+Knowsley,E08000011,Local authority,186,True
+Lambeth,E09000022,Local authority,187,True
+Lancaster,E07000121,Local authority,188,True
+Leeds,E08000035,Local authority,189,True
+Leicester,E06000016,Local authority,190,True
+Lewes,E07000063,Local authority,191,True
+Lewisham,E09000023,Local authority,192,True
+Lichfield,E07000194,Local authority,193,True
+Lincoln,E07000138,Local authority,194,True
+Lisburn and Castlereagh,N09000007,Local authority,195,True
+Liverpool,E08000012,Local authority,196,True
+Luton,E06000032,Local authority,197,True
+Maidstone,E07000110,Local authority,198,True
+Maldon,E07000074,Local authority,199,True
+Malvern Hills,E07000235,Local authority,200,True
+Manchester,E08000003,Local authority,201,True
+Mansfield,E07000174,Local authority,202,True
+Medway,E06000035,Local authority,203,True
+Melton,E07000133,Local authority,204,True
+Mendip,E07000187,Local authority,205,True
+Merthyr Tydfil,W06000024,Local authority,206,True
+Merton,E09000024,Local authority,207,True
+Mid Devon,E07000042,Local authority,208,True
+Mid Suffolk,E07000203,Local authority,209,True
+Mid Sussex,E07000228,Local authority,210,True
+Mid Ulster,N09000009,Local authority,211,True
+Mid and East Antrim,N09000008,Local authority,212,True
+Middlesbrough,E06000002,Local authority,213,True
+Midlothian,S12000019,Local authority,214,True
+Milton Keynes,E06000042,Local authority,215,True
+Mole Valley,E07000210,Local authority,216,True
+Monmouthshire,W06000021,Local authority,217,True
+Moray,S12000020,Local authority,218,True
+Na h-Eileanan Siar,S12000013,Local authority,219,True
+Neath Port Talbot,W06000012,Local authority,220,True
+New Forest,E07000091,Local authority,221,True
+Newark and Sherwood,E07000175,Local authority,222,True
+Newcastle upon Tyne,E08000021,Local authority,223,True
+Newcastle-under-Lyme,E07000195,Local authority,224,True
+Newham,E09000025,Local authority,225,True
+Newport,W06000022,Local authority,226,True
+"Newry, Mourne and Down",N09000010,Local authority,227,True
+North Ayrshire,S12000021,Local authority,228,True
+North Devon,E07000043,Local authority,229,True
+North East Derbyshire,E07000038,Local authority,230,True
+North East Lincolnshire,E06000012,Local authority,231,True
+North Hertfordshire,E07000099,Local authority,232,True
+North Kesteven,E07000139,Local authority,233,True
+North Lanarkshire,S12000050,Local authority,234,True
+North Lanarkshire,S12000044,Local authority,235,True
+North Lincolnshire,E06000013,Local authority,236,True
+North Norfolk,E07000147,Local authority,237,True
+North Northamptonshire,E06000061,Local authority,238,True
+North Somerset,E06000024,Local authority,239,True
+North Tyneside,E08000022,Local authority,240,True
+North Warwickshire,E07000218,Local authority,241,True
+North West Leicestershire,E07000134,Local authority,242,True
+North Yorkshire,E06000065,Local authority,243,True
+Northampton,E07000154,Local authority,244,True
+Northumberland,E06000057,Local authority,245,True
+Norwich,E07000148,Local authority,246,True
+Nottingham,E06000018,Local authority,247,True
+Nuneaton and Bedworth,E07000219,Local authority,248,True
+Oadby and Wigston,E07000135,Local authority,249,True
+Oldham,E08000004,Local authority,250,True
+Orkney Islands,S12000023,Local authority,251,True
+Oxford,E07000178,Local authority,252,True
+Pembrokeshire,W06000009,Local authority,253,True
+Pendle,E07000122,Local authority,254,True
+Perth & Kinross,S12000048,Local authority,255,True
+Perth and Kinross,S12000024,Local authority,256,True
+Peterborough,E06000031,Local authority,257,True
+Plymouth,E06000026,Local authority,258,True
+Portsmouth,E06000044,Local authority,259,True
+Powys,W06000023,Local authority,260,True
+Preston,E07000123,Local authority,261,True
+Reading,E06000038,Local authority,262,True
+Redbridge,E09000026,Local authority,263,True
+Redcar and Cleveland,E06000003,Local authority,264,True
+Redditch,E07000236,Local authority,265,True
+Reigate and Banstead,E07000211,Local authority,266,True
+Renfrewshire,S12000038,Local authority,267,True
+Rhondda Cynon Taf,W06000016,Local authority,268,True
+Ribble Valley,E07000124,Local authority,269,True
+Richmond upon Thames,E09000027,Local authority,270,True
+Richmondshire,E07000166,Local authority,271,True
+Rochdale,E08000005,Local authority,272,True
+Rochford,E07000075,Local authority,273,True
+Rossendale,E07000125,Local authority,274,True
+Rother,E07000064,Local authority,275,True
+Rotherham,E08000018,Local authority,276,True
+Rugby,E07000220,Local authority,277,True
+Runnymede,E07000212,Local authority,278,True
+Rushcliffe,E07000176,Local authority,279,True
+Rushmoor,E07000092,Local authority,280,True
+Rutland,E06000017,Local authority,281,True
+Ryedale,E07000167,Local authority,282,True
+Salford,E08000006,Local authority,283,True
+Sandwell,E08000028,Local authority,284,True
+Scarborough,E07000168,Local authority,285,True
+Scottish Borders,S12000026,Local authority,286,True
+Sedgemoor,E07000188,Local authority,287,True
+Sefton,E08000014,Local authority,288,True
+Selby,E07000169,Local authority,289,True
+Sevenoaks,E07000111,Local authority,290,True
+Sheffield,E08000019,Local authority,291,True
+Sheffield,E08000039,Local authority,292,True
+Shetland Islands,S12000027,Local authority,293,True
+Shropshire,E06000051,Local authority,294,True
+Slough,E06000039,Local authority,295,True
+Solihull,E08000029,Local authority,296,True
+Somerset,E06000066,Local authority,297,True
+Somerset West and Taunton,E07000246,Local authority,298,True
+South Ayrshire,S12000028,Local authority,299,True
+South Bucks,E07000006,Local authority,300,True
+South Cambridgeshire,E07000012,Local authority,301,True
+South Derbyshire,E07000039,Local authority,302,True
+South Gloucestershire,E06000025,Local authority,303,True
+South Hams,E07000044,Local authority,304,True
+South Holland,E07000140,Local authority,305,True
+South Kesteven,E07000141,Local authority,306,True
+South Lakeland,E07000031,Local authority,307,True
+South Lanarkshire,S12000029,Local authority,308,True
+South Norfolk,E07000149,Local authority,309,True
+South Northamptonshire,E07000155,Local authority,310,True
+South Oxfordshire,E07000179,Local authority,311,True
+South Ribble,E07000126,Local authority,312,True
+South Somerset,E07000189,Local authority,313,True
+South Staffordshire,E07000196,Local authority,314,True
+South Tyneside,E08000023,Local authority,315,True
+Southampton,E06000045,Local authority,316,True
+Southend-on-Sea,E06000033,Local authority,317,True
+Southwark,E09000028,Local authority,318,True
+Spelthorne,E07000213,Local authority,319,True
+St Albans,E07000240,Local authority,320,True
+St. Helens,E08000013,Local authority,321,True
+Stafford,E07000197,Local authority,322,True
+Staffordshire Moorlands,E07000198,Local authority,323,True
+Stevenage,E07000243,Local authority,324,True
+Stirling,S12000030,Local authority,325,True
+Stockport,E08000007,Local authority,326,True
+Stockton-on-Tees,E06000004,Local authority,327,True
+Stoke-on-Trent,E06000021,Local authority,328,True
+Stratford-on-Avon,E07000221,Local authority,329,True
+Stroud,E07000082,Local authority,330,True
+Sunderland,E08000024,Local authority,331,True
+Surrey Heath,E07000214,Local authority,332,True
+Sutton,E09000029,Local authority,333,True
+Swale,E07000113,Local authority,334,True
+Swansea,W06000011,Local authority,335,True
+Swindon,E06000030,Local authority,336,True
+Tameside,E08000008,Local authority,337,True
+Tamworth,E07000199,Local authority,338,True
+Tandridge,E07000215,Local authority,339,True
+Teignbridge,E07000045,Local authority,340,True
+Telford and Wrekin,E06000020,Local authority,341,True
+Tendring,E07000076,Local authority,342,True
+Test Valley,E07000093,Local authority,343,True
+Tewkesbury,E07000083,Local authority,344,True
+Thanet,E07000114,Local authority,345,True
+The Vale of Glamorgan,W06000014,Local authority,346,True
+Three Rivers,E07000102,Local authority,347,True
+Thurrock,E06000034,Local authority,348,True
+Tonbridge and Malling,E07000115,Local authority,349,True
+Torbay,E06000027,Local authority,350,True
+Torfaen,W06000020,Local authority,351,True
+Torridge,E07000046,Local authority,352,True
+Tower Hamlets,E09000030,Local authority,353,True
+Trafford,E08000009,Local authority,354,True
+Tunbridge Wells,E07000116,Local authority,355,True
+Uttlesford,E07000077,Local authority,356,True
+Vale of White Horse,E07000180,Local authority,357,True
+Wakefield,E08000036,Local authority,358,True
+Walsall,E08000030,Local authority,359,True
+Waltham Forest,E09000031,Local authority,360,True
+Wandsworth,E09000032,Local authority,361,True
+Warrington,E06000007,Local authority,362,True
+Warwick,E07000222,Local authority,363,True
+Watford,E07000103,Local authority,364,True
+Waverley,E07000216,Local authority,365,True
+Wealden,E07000065,Local authority,366,True
+Wellingborough,E07000156,Local authority,367,True
+Welwyn Hatfield,E07000241,Local authority,368,True
+West Berkshire,E06000037,Local authority,369,True
+West Devon,E07000047,Local authority,370,True
+West Dunbartonshire,S12000039,Local authority,371,True
+West Lancashire,E07000127,Local authority,372,True
+West Lindsey,E07000142,Local authority,373,True
+West Lothian,S12000040,Local authority,374,True
+West Northamptonshire,E06000062,Local authority,375,True
+West Oxfordshire,E07000181,Local authority,376,True
+West Suffolk,E07000245,Local authority,377,True
+Westminster,E09000033,Local authority,378,True
+Westmorland and Furness,E06000064,Local authority,379,True
+Wigan,E08000010,Local authority,380,True
+Wiltshire,E06000054,Local authority,381,True
+Winchester,E07000094,Local authority,382,True
+Windsor and Maidenhead,E06000040,Local authority,383,True
+Wirral,E08000015,Local authority,384,True
+Woking,E07000217,Local authority,385,True
+Wokingham,E06000041,Local authority,386,True
+Wolverhampton,E08000031,Local authority,387,True
+Worcester,E07000237,Local authority,388,True
+Worthing,E07000229,Local authority,389,True
+Wrexham,W06000006,Local authority,390,True
+Wychavon,E07000238,Local authority,391,True
+Wycombe,E07000007,Local authority,392,True
+Wyre,E07000128,Local authority,393,True
+Wyre Forest,E07000239,Local authority,394,True
+York,E06000014,Local authority,395,True
+England and Wales,K04000001,National aggregate,1,False
+Great Britain,K03000001,National aggregate,2,False
+United Kingdom,K02000001,National aggregate,3,False
+Inner London,E13000001,Other,1,False
+Outer London,E13000002,Other,2,False
+East,E12000006,Region,1,False
+East Midlands,E12000004,Region,2,False
+London,E12000007,Region,3,False
+North East,E12000001,Region,4,False
+North West,E12000002,Region,5,False
+South East,E12000008,Region,6,False
+South West,E12000009,Region,7,False
+West Midlands,E12000005,Region,8,False
+Yorkshire and The Humber,E12000003,Region,9,False

@@ -1,0 +1,69 @@
+table 'Fact Region Monthly'
+	lineageTag: baf68d3c-6ea9-4e6b-9c47-89e140be61c4
+
+	measure 'Regional Claimant Count (K)' = SUM('Fact Region Monthly'[ClaimantCountK])
+		formatString: #,##0.0
+		displayFolder: Regional Metrics
+		lineageTag: 579de04a-996b-4cd0-b130-36c5a21d9652
+
+	measure 'Regional Claimant Rate %' = AVERAGE('Fact Region Monthly'[ClaimantRatePct]) / 100
+		formatString: 0.0%
+		displayFolder: Regional Metrics
+		lineageTag: 4d6c24a7-b306-4276-9db6-70f151ef9850
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8501569c-4130-492e-9f60-7d96188dcbcc
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column AreaCode
+		dataType: string
+		lineageTag: aa9081df-6d6c-458b-899f-1fc1e92bab8f
+		summarizeBy: none
+		sourceColumn: AreaCode
+
+	column AreaName
+		dataType: string
+		lineageTag: 7084f0ab-2b44-4a43-aa1f-aa825b0e41bc
+		summarizeBy: none
+		sourceColumn: AreaName
+
+	column AreaLevel
+		dataType: string
+		lineageTag: f37e3c47-b152-415b-8f17-d221ccb04a93
+		summarizeBy: none
+		sourceColumn: AreaLevel
+
+	column ClaimantCountK
+		dataType: double
+		lineageTag: 0a540401-0878-4d2b-b261-0f864c766fa2
+		summarizeBy: none
+		sourceColumn: ClaimantCountK
+
+	column ClaimantRatePct
+		dataType: double
+		lineageTag: e13ddf93-08cb-49c6-a2ec-0e40db94554b
+		summarizeBy: none
+		sourceColumn: ClaimantRatePct
+
+	partition 'Fact Region Monthly-Partition' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(SourceDataFolder & "fact_region_monthly.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"Date", type date},
+				        {"AreaCode", type text},
+				        {"AreaName", type text},
+				        {"AreaLevel", type text},
+				        {"ClaimantCountK", type number},
+				        {"ClaimantRatePct", type number}
+				    })
+				in
+				    #"Changed Type"
+

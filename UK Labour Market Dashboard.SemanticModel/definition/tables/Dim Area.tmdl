@@ -1,0 +1,57 @@
+table 'Dim Area'
+	lineageTag: f2b06253-dfb4-414b-8cd1-a350eb976455
+
+	measure 'Selected Area' = SELECTEDVALUE('Dim Area'[AreaName], "All selected areas")
+		displayFolder: Context
+		lineageTag: be7fd8a6-3454-42ab-b3a0-f7121e62ea47
+
+	column AreaCode
+		dataType: string
+		isKey
+		lineageTag: b4e77d11-2d4a-457c-b8af-3513d04594fb
+		summarizeBy: none
+		sourceColumn: AreaCode
+
+	column AreaName
+		dataType: string
+		lineageTag: 7ef60eb0-81c5-43b9-93e1-48c3c8bbc9f7
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: AreaName
+		sortByColumn: AreaSort
+
+	column AreaLevel
+		dataType: string
+		lineageTag: 806abb87-84b5-4ec2-a8ce-b77277cc48c4
+		summarizeBy: none
+		sourceColumn: AreaLevel
+
+	column AreaSort
+		dataType: int64
+		isHidden
+		lineageTag: 021075f7-1178-4be0-b4c4-d6d9f92ada56
+		summarizeBy: none
+		sourceColumn: AreaSort
+
+	column IsLocalArea
+		dataType: boolean
+		lineageTag: b2813a44-df0a-40b2-b199-5e0b0a3f7a77
+		summarizeBy: none
+		sourceColumn: IsLocalArea
+
+	partition 'Dim Area-Partition' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(SourceDataFolder & "dim_area.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"AreaCode", type text},
+				        {"AreaName", type text},
+				        {"AreaLevel", type text},
+				        {"AreaSort", Int64.Type},
+				        {"IsLocalArea", type logical}
+				    })
+				in
+				    #"Changed Type"
+

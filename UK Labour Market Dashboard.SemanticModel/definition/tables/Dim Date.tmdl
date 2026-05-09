@@ -1,0 +1,119 @@
+table 'Dim Date'
+	lineageTag: 35037363-aa6f-4154-a3ed-1e60243c44a8
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: 176e77aa-cf28-4ed4-a6b2-086a8e0ffd88
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 80ae1236-0ed8-44f3-a2f9-75e1b30a55fb
+			defaultHierarchy: LocalDateTable_871d847c-89aa-4fbd-ae96-7b3771de1383.'Date Hierarchy'
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		lineageTag: aefa6524-637e-48ee-a69f-aac96ee8fd56
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNo
+		dataType: int64
+		lineageTag: 8e422eed-8e53-4c59-ba73-f1916e575986
+		summarizeBy: sum
+		sourceColumn: MonthNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		lineageTag: 3c880e9f-90dc-464f-a92e-71040f300a1b
+		summarizeBy: none
+		sourceColumn: MonthName
+		sortByColumn: MonthNo
+
+	column Quarter
+		dataType: string
+		lineageTag: aae946b5-1075-4df9-9a8e-7daab62d7f30
+		summarizeBy: none
+		sourceColumn: Quarter
+
+	column YearMonth
+		dataType: string
+		lineageTag: 997dcf97-aba2-41f5-8efe-acf1b8f2e054
+		summarizeBy: none
+		sourceColumn: YearMonth
+		sortByColumn: MonthSort
+
+	column MonthSort
+		dataType: int64
+		isHidden
+		lineageTag: 0402411d-037b-46b9-b2ee-a5eedaaae290
+		summarizeBy: sum
+		sourceColumn: MonthSort
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthsFromLatest
+		dataType: string
+		lineageTag: 6411cef7-7803-464b-9595-d9c23c8434bb
+		summarizeBy: none
+		sourceColumn: MonthsFromLatest
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLast24Months
+		dataType: string
+		lineageTag: 0c05b62c-9234-4242-9b38-742588caeb66
+		summarizeBy: none
+		sourceColumn: IsLast24Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLast60Months
+		dataType: string
+		lineageTag: cc0c4a4c-f08f-47c2-951b-bf6f920800fb
+		summarizeBy: none
+		sourceColumn: IsLast60Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsLast120Months
+		dataType: string
+		lineageTag: 139f9d34-2547-4741-9449-d62c44cd736b
+		summarizeBy: none
+		sourceColumn: IsLast120Months
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthShort = LEFT('Dim Date'[MonthName], 3)
+		dataType: string
+		lineageTag: 372608d8-3761-4bb5-be87-9af41dfe3f06
+		summarizeBy: none
+		sortByColumn: MonthNo
+
+	partition 'Dim Date-Partition' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(SourceDataFolder & "dim_date.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{
+				        {"Date", type date},
+				        {"Year", Int64.Type},
+				        {"MonthNo", Int64.Type},
+				        {"MonthName", type text},
+				        {"Quarter", type text},
+				        {"YearMonth", type text},
+				        {"MonthSort", Int64.Type}
+				    })
+				in
+				    #"Changed Type"
+

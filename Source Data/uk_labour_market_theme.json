@@ -1,0 +1,201 @@
+{
+  "name": "UK Labour Market Portfolio",
+  "dataColors": [
+    "#0F5F73",
+    "#C25B3F",
+    "#2D6B4F",
+    "#8A6A2B",
+    "#3E5C76",
+    "#B86A82",
+    "#5F7C6A",
+    "#6E5A7E"
+  ],
+  "foreground": "#1F2B34",
+  "foregroundNeutralSecondary": "#66727A",
+  "foregroundNeutralTertiary": "#A8B0B6",
+  "background": "#F7F3EC",
+  "backgroundLight": "#FFFDF9",
+  "backgroundNeutral": "#DED8CE",
+  "tableAccent": "#0F5F73",
+  "good": "#2D6B4F",
+  "neutral": "#8A6A2B",
+  "bad": "#9B4D2F",
+  "maximum": "#0F5F73",
+  "center": "#8A6A2B",
+  "minimum": "#E5F1F4",
+  "null": "#D7CFC3",
+  "textClasses": {
+    "callout": {
+      "fontSize": 28,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1F2B34"
+    },
+    "title": {
+      "fontSize": 13,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1F2B34"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#1F2B34"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#66727A"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "show": true,
+            "titleWrap": true,
+            "fontFamily": "Segoe UI Semibold",
+            "fontSize": 13,
+            "color": {
+              "solid": {
+                "color": "#1F2B34"
+              }
+            }
+          }
+        ],
+        "background": [
+          {
+            "show": true,
+            "transparency": 0,
+            "color": {
+              "solid": {
+                "color": "#FFFDF9"
+              }
+            }
+          }
+        ],
+        "border": [
+          {
+            "show": false
+          }
+        ],
+        "visualHeader": [
+          {
+            "show": false
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F7F3EC"
+              }
+            }
+          }
+        ],
+        "background": [
+          {
+            "transparency": 0,
+            "color": {
+              "solid": {
+                "color": "#F7F3EC"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "lineChart": {
+      "*": {
+        "categoryAxis": [
+          {
+            "showAxisTitle": false,
+            "labelColor": {
+              "solid": {
+                "color": "#66727A"
+              }
+            }
+          }
+        ],
+        "valueAxis": [
+          {
+            "showAxisTitle": false,
+            "gridlineStyle": "dotted",
+            "labelColor": {
+              "solid": {
+                "color": "#66727A"
+              }
+            }
+          }
+        ],
+        "legend": [
+          {
+            "show": false
+          }
+        ],
+        "lineStyles": [
+          {
+            "strokeWidth": 3
+          }
+        ]
+      }
+    },
+    "tableEx": {
+      "*": {
+        "grid": [
+          {
+            "gridVertical": false,
+            "gridHorizontal": false,
+            "outlineColor": {
+              "solid": {
+                "color": "#FFFDF9"
+              }
+            }
+          }
+        ],
+        "columnHeaders": [
+          {
+            "show": false
+          }
+        ],
+        "values": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#1F2B34"
+              }
+            },
+            "textSize": 12
+          }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [
+          {
+            "color": {
+              "solid": {
+                "color": "#66727A"
+              }
+            },
+            "fontSize": 11
+          }
+        ],
+        "categoryLabels": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#66727A"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
